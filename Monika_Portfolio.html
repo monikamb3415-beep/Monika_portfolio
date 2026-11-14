@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- saved from url=(0111)file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The personal portfolio of Your Name, a designer and developer.">
+  <meta name="theme-color" content="#101827">
+  <title>Your Name — Portfolio</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --navy: #101827;
+      --navy-light: #172337;
+      --panel: #1b2a40;
+      --orange: #ff914d;
+      --orange-light: #ffb17f;
+      --text: #f4f6fa;
+      --muted: #b6c0d0;
+      --line: rgba(255,255,255,.12);
+      --width: 1120px;
+      --radius: 18px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+    body {
+      margin: 0;
+      background: var(--navy);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--orange-light); outline-offset: 4px; }
+    .wrap { width: min(var(--width), calc(100% - 2.5rem)); margin-inline: auto; }
+    .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 20; padding: .7rem 1rem; background: var(--orange); color: var(--navy); border-radius: 8px; font-weight: 700; }
+    .skip-link:focus { top: 1rem; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(16,24,39,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { text-decoration: none; font-weight: 800; letter-spacing: -.03em; font-size: 1.15rem; }
+    .brand span { color: var(--orange); }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: .95rem; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--orange-light); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 10px; min-width: 44px; min-height: 44px; font: inherit; cursor: pointer; }
+    .hero { min-height: 76vh; display: grid; align-items: center; padding-block: 6rem; background: radial-gradient(ellipse at 85% 25%, rgba(255,145,77,.13), transparent 34%); }
+    .eyebrow { color: var(--orange-light); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
+    h1 { max-width: 850px; margin: .7rem 0 1rem; font-size: clamp(2.8rem, 8vw, 5.7rem); line-height: 1.02; letter-spacing: -.055em; }
+    h1 span { color: var(--orange); }
+    .hero p { max-width: 660px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); margin: 0 0 2rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .9rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .7rem 1.15rem; border: 1px solid var(--orange); border-radius: 10px; background: var(--orange); color: #191c22; font-weight: 750; text-decoration: none; transition: transform .18s ease, background .18s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--orange-light); }
+    .button.secondary { background: transparent; color: var(--text); border-color: var(--line); }
+    section { padding-block: 5.5rem; }
+    .section-heading { margin-bottom: 2rem; }
+    .section-heading h2 { margin: .25rem 0 .5rem; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.04em; line-height: 1.15; }
+    .section-heading p { color: var(--muted); max-width: 650px; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: start; }
+    .about-copy p { color: var(--muted); margin-top: 0; }
+    .about-copy strong { color: var(--text); }
+    .fact-box { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; background: var(--navy-light); }
+    .fact-box h3 { margin-top: 0; }
+    .fact-box ul { margin-bottom: 0; padding-left: 1.2rem; color: var(--muted); }
+    .fact-box li + li { margin-top: .45rem; }
+    #skills { background: var(--navy-light); }
+    .skills-list { display: flex; flex-wrap: wrap; gap: .7rem; margin: 0; padding: 0; list-style: none; }
+    .skills-list li { padding: .55rem .9rem; border: 1px solid rgba(255,145,77,.35); background: rgba(255,145,77,.08); color: #ffd4b8; border-radius: 999px; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .project-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--navy-light); display: flex; flex-direction: column; }
+    .project-art { min-height: 160px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(255,145,77,.25), rgba(45,70,104,.85)); color: var(--orange-light); font-size: 2.5rem; font-weight: 800; letter-spacing: -.07em; }
+    .project-card:nth-child(2) .project-art { background: linear-gradient(135deg, rgba(67,120,157,.5), rgba(24,35,56,.9)); }
+    .project-card:nth-child(3) .project-art { background: linear-gradient(135deg, rgba(188,103,63,.48), rgba(54,43,67,.9)); }
+    .project-body { padding: 1.35rem; display: flex; flex: 1; flex-direction: column; }
+    .project-body h3 { margin: 0 0 .5rem; font-size: 1.25rem; }
+    .project-body p { color: var(--muted); margin: 0 0 1rem; }
+    .tags { color: var(--orange-light); font-size: .85rem; margin-bottom: 1.2rem; }
+    .project-links { display: flex; gap: 1rem; margin-top: auto; }
+    .project-links a, .contact-links a { color: var(--orange-light); font-weight: 700; text-underline-offset: 4px; }
+    #contact { background: var(--navy-light); }
+    .contact-panel { display: flex; justify-content: space-between; align-items: center; gap: 2rem; border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.5rem, 5vw, 3rem); background: var(--navy); }
+    .contact-panel p { max-width: 620px; color: var(--muted); margin-bottom: 0; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; }
+    footer { padding-block: 1.5rem; color: var(--muted); font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-links { display: none; position: absolute; inset: 72px 0 auto; padding: 1rem 1.25rem 1.25rem; flex-direction: column; align-items: stretch; gap: 0; background: var(--navy); border-bottom: 1px solid var(--line); }
+      .nav-links[data-open="true"] { display: flex; }
+      .nav-links a { display: block; padding: .8rem .25rem; }
+      .about-grid, .project-grid { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-block: 5.5rem; }
+      section { padding-block: 4.25rem; }
+      .contact-panel { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#main">Skip to content</a>
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#home" aria-label="Your Name, home">Your Name<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <ul class="nav-links" id="primary-menu" data-open="false">
+        <li><a href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#about">About</a></li><li><a href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#skills">Skills</a></li><li><a href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#projects">Projects</a></li><li><a href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">Hello, I'm Your Name</div>
+        <h1>I build thoughtful <span>digital experiences.</span></h1>
+        <p>I'm a [your role] who enjoys turning ideas into useful, welcoming websites. I care about clean design, accessible details, and making the web work well for everyone.</p>
+        <div class="actions"><a class="button" href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#projects">See my work</a><a class="button secondary" href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#contact">Get in touch</a></div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">A little about me</div><h2>Curious by nature. Builder by choice.</h2></div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>Hi, I'm <strong>Your Name</strong>, a [student / designer / developer] based in [City, Country]. I like solving real problems with simple, considered digital experiences.</p>
+            <p>Currently, I'm [what you're learning or working on]. Outside of that, you'll find me [a hobby or interest]. I'm always happy to meet kind people and hear about interesting projects.</p>
+          </div>
+          <aside class="fact-box" aria-label="Quick facts"><h3>At a glance</h3><ul><li>Focus: [Web design and development]</li><li>Available for: [Internships / freelance / collaboration]</li><li>Currently learning: [A skill or tool]</li></ul></aside>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">What I work with</div><h2>Skills &amp; tools</h2><p>Replace these examples with the skills and tools you use most.</p></div>
+        <ul class="skills-list"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive design</li><li>Accessibility</li><li>[Your tool]</li></ul>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-heading"><div class="eyebrow">Selected work</div><h2>Things I've made</h2><p>A few projects I'm proud of. Add a sentence about what you made and the problem it solves.</p></div>
+        <div class="project-grid">
+          <article class="project-card"><div class="project-art" aria-hidden="true">01</div><div class="project-body"><h3>[Project One]</h3><p>[A short description of your project, your role, and what you learned while building it.]</p><div class="tags">[HTML] · [CSS] · [JavaScript]</div><div class="project-links"><a href="https://example.com/" target="_blank" rel="noopener noreferrer" aria-label="View Project One live demo (replace this link)">Live demo ↗</a><a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener noreferrer" aria-label="View Project One source code (replace this link)">Source ↗</a></div></div></article>
+          <article class="project-card"><div class="project-art" aria-hidden="true">02</div><div class="project-body"><h3>[Project Two]</h3><p>[Describe the project in one or two clear sentences. Share a feature or result you especially like.]</p><div class="tags">[Your tools] · [Your tools]</div><div class="project-links"><a href="https://example.com/" target="_blank" rel="noopener noreferrer" aria-label="View Project Two live demo (replace this link)">Live demo ↗</a><a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener noreferrer" aria-label="View Project Two source code (replace this link)">Source ↗</a></div></div></article>
+          <article class="project-card"><div class="project-art" aria-hidden="true">03</div><div class="project-body"><h3>[Project Three]</h3><p>[Tell visitors what this project does and what your contribution was. Keep it specific and friendly.]</p><div class="tags">[Your tools] · [Your tools]</div><div class="project-links"><a href="https://example.com/" target="_blank" rel="noopener noreferrer" aria-label="View Project Three live demo (replace this link)">Live demo ↗</a><a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener noreferrer" aria-label="View Project Three source code (replace this link)">Source ↗</a></div></div></article>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="wrap"><div class="contact-panel"><div><div class="eyebrow">Let's talk</div><h2>Have a project in mind?</h2><p>I'm open to [opportunities / collaborations / a friendly chat]. Send me a note and I'll get back to you.</p></div><div class="contact-links"><a href="mailto:hello@example.com">Email me ↗</a><a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© <span id="year">2026</span> Your Name. Made with care.</span><a href="file:///C:/Users/admin/Documents/Codex/2026-11-14/referenced-chatgpt-conversation-this-is-an/outputs/index.html#home">Back to top ↑</a></div></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('#primary-menu');
+    const menuLinks = menu.querySelectorAll('a');
+
+    function setMenuOpen(open) {
+      menu.dataset.open = String(open);
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      menuButton.querySelector('span').textContent = open ? '×' : '☰';
+    }
+
+    menuButton.addEventListener('click', () => {
+      setMenuOpen(menu.dataset.open !== 'true');
+    });
+
+    menuLinks.forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.dataset.open === 'true') {
+        setMenuOpen(false);
+        menuButton.focus();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (menu.dataset.open === 'true' && !event.target.closest('nav')) setMenuOpen(false);
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+
+
+
+</body></html>
